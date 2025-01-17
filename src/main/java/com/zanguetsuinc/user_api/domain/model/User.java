@@ -1,4 +1,4 @@
-package domain.model;
+package com.zanguetsuinc.user_api.domain.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
