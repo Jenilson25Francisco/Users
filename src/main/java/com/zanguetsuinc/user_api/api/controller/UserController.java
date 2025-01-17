@@ -40,7 +40,7 @@ public class UserController {
     public UserDto createUser(@Valid @RequestBody UserResponse userResponse){
 
         User newUser = userAssembler.toResponse(userResponse);
-        User userAdded = userCatalog.creat(newUser);
+        User userAdded = userCatalog.create(newUser);
 
         return userAssembler.toDto(userAdded);
 
@@ -54,8 +54,8 @@ public class UserController {
         }
 
         User updatingUser = userAssembler.toResponse(userResponse);
-        updatingUser.setId(userId);
-        User userUpdated = userCatalog.creat(updatingUser);
+       // updatingUser.setId(userId);
+        User userUpdated = userCatalog.create(updatingUser);
 
         return ResponseEntity.ok(userAssembler.toDto(userUpdated));
 

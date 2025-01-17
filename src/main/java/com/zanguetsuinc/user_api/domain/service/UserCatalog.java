@@ -12,13 +12,8 @@ public class UserCatalog {
 
     private final UserRepository userRepository;
 
-    public User get(Long userId){
-        return userRepository.findById(userId)
-                .orElseThrow(() -> new RuntimeException("cliente nao encontrado"));
-    }
-
     @Transactional
-    public User creat(User user){
+    public User create(User user){
 
         boolean usedEmail = userRepository.findByEmail(user.getEmail())
                 .stream()
