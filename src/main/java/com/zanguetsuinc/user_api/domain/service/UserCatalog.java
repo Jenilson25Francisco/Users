@@ -12,6 +12,11 @@ public class UserCatalog {
 
     private final UserRepository userRepository;
 
+    public User get(Long userId){
+        return userRepository.findById(userId)
+                .orElseThrow(() -> new RuntimeException("cliente nao encontrado"));
+    }
+
     @Transactional
     public User create(User user){
 
