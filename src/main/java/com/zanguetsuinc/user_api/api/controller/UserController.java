@@ -54,7 +54,7 @@ public class UserController {
         }
 
         User updatingUser = userAssembler.toResponse(userResponse);
-        updatingUser.setId(userId);
+       // updatingUser.setId(userId);
         User userUpdated = userCatalog.creat(updatingUser);
 
         return ResponseEntity.ok(userAssembler.toDto(userUpdated));
